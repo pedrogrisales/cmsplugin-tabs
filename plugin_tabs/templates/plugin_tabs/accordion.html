@@ -1,0 +1,14 @@
+
+
+
+<div id="{{ tabs_list_id }}">
+	<dl class="accordion" data-accordion>
+		{% for tab in tabs %}
+			<dd class="accordion-navigation"><a href="#{{tab.get_html_id}}">{{ tab.titulo }}</a>
+				<div id="{{tab.get_html_id}}" class="content {% if forloop.first %}active{% endif %}">
+					{{ tab.contenido|safe }}
+				</div>
+			</dd>
+		{% endfor %}
+	</dl>
+</div>

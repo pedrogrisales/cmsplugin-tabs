@@ -1,0 +1,21 @@
+
+
+<div id="{{ tabs_list_id }}">
+
+  <dl class="tabs" data-tab>
+  	{% for tab in tabs %}
+      <dd class="{% if forloop.first %}active{% endif %}"><a href="#{{tab.get_html_id}}">{{ tab.titulo }}</a></dd>
+    {% endfor %} 
+  </dl>
+
+  <div class="tabs-content">
+    {% for tab in tabs %}
+      <div class="content {% if forloop.first %}active{% endif %}" id="{{tab.get_html_id}}">
+        {{ tab.contenido|safe }}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+
